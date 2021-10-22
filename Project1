@@ -1,0 +1,336 @@
+# Step 1: User determines locations of places
+# Starting list
+aList = ["NW", "N", "NE", "E", "SE", "S", "SW", "W", "center"]
+    # House
+print("Where is your house? Is it to the", aList, "?")
+house_place = input()
+aList.remove(house_place)
+house_color = input("What color is your house?")
+    # School
+print("Where is your school? Is it to the", aList, "?")
+school_place = input()
+aList.remove(school_place)
+    # Downtown
+print("Where is downtown? Is it to the", aList, "?")
+downtown_place = input()
+aList.remove(downtown_place)
+birk_color = input("What color are your birks?")
+    # Old Mill
+print("Where is the Old Mill? Is it to the", aList, "?")
+Old_place = input()
+aList.remove(Old_place)
+
+# Step 2: Turtle Setup
+import turtle as trtl
+tr = trtl.Turtle()
+tr.penup()
+tr.speed(0)
+
+# Step 3: House Location
+if (house_place == "NW"):
+    tr.goto(-300, 300)
+if (house_place == "N"):
+    tr.goto(0, 300)
+if (house_place == "NE"):
+    tr.goto(300, 300)
+if (house_place == "E"):
+    tr.goto(300, 0)
+if (house_place == "SE"):
+    tr.goto(300, -300)
+if (house_place == "S"):
+    tr.goto(0, -300)
+if (house_place == "SW"):
+    tr.goto(-300, -300)
+if (house_place == "W"):
+    tr.goto(-300, 0)
+if (house_place == "center"):
+    tr.goto(0, 0)
+
+# Step 4: Drawing the house
+count = 0
+tr.pendown()
+tr.fillcolor(house_color)
+tr.right(135)
+tr.begin_fill()
+tr.circle(50, 360, 4)
+tr.end_fill()
+
+    # Drawing the roof
+tr.left(180)
+tr.pensize(10)
+tr.pencolor("brown")
+tr.fillcolor("brown")
+tr.begin_fill()
+tr.forward(50)
+tr.right(90)
+tr.forward(50)
+tr.right(135)
+tr.forward(70)
+tr.end_fill()
+tr.penup()
+
+    # Drawing the door
+tr.pencolor("brown")
+tr.left(90)
+tr.forward(70)
+tr.left(90)
+tr.forward(20)
+tr.left(90)
+tr.pendown()
+tr.forward(25)
+tr.right(90)
+tr.forward(10)
+tr.right(90)
+tr.forward(25)
+tr.right(90)
+tr.forward(10)
+tr.penup()
+
+# Step 5: School Location
+if (school_place == "NW"):
+    tr.goto(-300, 300)
+if (school_place == "N"):
+    tr.goto(0, 300)
+if (school_place == "NE"):
+    tr.goto(300, 300)
+if (school_place == "E"):
+    tr.goto(300, 0)
+if (house_place == "SE"):
+    tr.goto(300, -300)
+if (school_place == "S"):
+    tr.goto(0, -300)
+if (school_place == "SW"):
+    tr.goto(-300, -300)
+if (school_place == "W"):
+    tr.goto(-300, 0)
+if (school_place == "center"):
+    tr.goto(0, 0)
+
+# Step 6: Drawing the school
+tr.pendown()
+tr.setheading(45)
+tr.pencolor("red")
+tr.fillcolor("red")
+tr.begin_fill()
+tr.circle(50, 360, 4)
+tr.right(90)
+tr.circle(50, 360, 4)
+tr.end_fill()
+tr.pensize(2)
+
+    # Drawing the flag
+tr.pencolor("black")
+tr.left(135)
+tr.forward(150)
+tr.pensize(10)
+tr.right(90)
+tr.pencolor("blue")
+tr.forward(20)
+tr.pencolor("red")
+tr.forward(20)
+tr.right(90)
+tr.forward(20)
+tr.right(90)
+tr.forward(40)
+tr.right(90)
+tr.forward(10)
+tr.pencolor("blue")
+tr.forward(9)
+tr.right(90)
+tr.forward(20)
+tr.right(90)
+tr.forward(9)
+tr.right(90)
+tr.forward(19)
+tr.right(180)
+tr.forward(20)
+
+    # Drawing the windows
+tr.pencolor("white")
+tr.fillcolor("white")
+tr.begin_fill()
+tr.forward(20)
+tr.penup()
+tr.right(90)
+tr.forward(125)
+tr.left(45)
+tr.pendown()
+tr.begin_fill()
+tr.circle(20, 360, 4)
+tr.end_fill()
+tr.penup()
+tr.right(135)
+tr.forward(110)
+tr.pendown()
+tr.right(225)
+tr.begin_fill()
+tr.circle(20, 360, 4)
+tr.end_fill()
+tr.left(135)
+tr.penup()
+
+# Step 7: Downtown Location
+if (downtown_place == "NW"):
+    tr.goto(-300, 300)
+if (downtown_place == "N"):
+    tr.goto(0, 300)
+if (downtown_place == "NE"):
+    tr.goto(300, 300)
+if (downtown_place == "E"):
+    tr.goto(300, 0)
+if (downtown_place == "SE"):
+    tr.goto(300, -300)
+if (downtown_place == "S"):
+    tr.goto(0, -300)
+if (downtown_place == "SW"):
+    tr.goto(-300, -300)
+if (downtown_place == "W"):
+    tr.goto(-300, 0)
+if (downtown_place == "center"):
+    tr.goto(0, 0)
+
+# Step 8: Drawing downtown (as a birkenstock)
+tr.pendown()
+tr.left(80)
+tr.pencolor("brown")
+tr.pensize(10)
+num = 0
+tr.fillcolor("brown")
+tr.begin_fill()
+
+    # The birk sole
+while (num <= 8):
+    tr.forward(10)
+    tr.left(num*5)
+    num = num + 1
+tr.forward(100)
+num = 0
+while (num <= 8):  
+    tr.forward(10)
+    tr.left(num*5)
+    num = num + 1
+tr.forward(100)
+tr.end_fill()
+
+    # The straps
+tr.fillcolor(birk_color)
+tr.penup()
+tr.pensize(20)
+tr.setheading(270)
+tr.pendown()
+tr.pencolor(birk_color)
+tr.begin_fill()
+tr.left(320)
+tr.forward(50)
+tr.right(180)
+tr.forward(75)
+tr.right(80)
+tr.forward(15)
+tr.right(70)
+tr.forward(65)
+tr.right(90)
+tr.forward(50)
+tr.right(180)
+tr.end_fill()
+tr.begin_fill()
+tr.forward(100)
+tr.left(105)
+tr.forward(50)
+tr.left(70)
+tr.forward(15)
+tr.left(80)
+tr.forward(50)
+tr.end_fill()
+tr.penup()
+
+# Step 9: Locating the Old Mill
+if (Old_place == "NW"):
+    tr.goto(-300, 300)
+if (Old_place == "N"):
+    tr.goto(0, 300)
+if (Old_place == "NE"):
+    tr.goto(300, 300)
+if (Old_place == "E"):
+    tr.goto(300, 0)
+if (Old_place == "SE"):
+    tr.goto(300, -300)
+if (Old_place == "S"):
+    tr.goto(0, -300)
+if (Old_place == "SW"):
+    tr.goto(-300, -300)
+if (Old_place == "W"):
+    tr.goto(-300, 0)
+if (Old_place == "center"):
+    tr.goto(0, 0)
+
+# Step 10: Drawing the Old Mill
+tr.pendown()
+tr.pensize(10)
+tr.pencolor("brown")
+tr.setheading(45)
+tr.fillcolor("brown")
+tr.begin_fill()
+tr.circle(50, 360, 4)
+tr.right(90)
+tr.circle(50, 360, 4)
+tr.end_fill()
+tr.left(135)
+tr.forward(75)
+
+    # The stacks
+tr.pencolor("gray")
+tr.forward(50)
+tr.back(50)
+tr.penup()
+tr.left(90)
+tr.forward(25)
+tr.right(90)
+tr.pendown()
+tr.forward(50)
+tr.back(50)
+tr.penup()
+tr.right(90)
+tr.forward(50)
+tr.left(90)
+tr.pendown()
+tr.forward(50)
+
+    # The River
+tr.penup()
+tr.back(150)
+tr.right(90)
+tr.forward(150)
+tr.right(270)
+tr.pensize(20)
+tr.pencolor("blue")
+tr.fillcolor("blue")
+tr.begin_fill()
+tr.pendown()
+tr.circle(25, 180, 20)
+tr.right(180)
+tr.circle(20, 180, 14)
+tr.right(90)
+tr.penup()
+tr.forward(100)
+tr.left(90)
+tr.pendown()
+tr.circle(50, 180, 15)
+tr.penup()
+tr.left(90)
+tr.forward(100)
+tr.right(90)
+tr.pendown()
+tr.circle(25, 180, 25)
+tr.right(90)
+tr.penup()
+tr.forward(100)
+tr.left(90)
+tr.pendown()
+tr.circle(50, 180, 120)
+tr.end_fill()
+tr.right(90)
+tr.forward(250)
+
+# Step 11: Making map stay
+wn = trtl.Screen()
+wn.mainloop()
